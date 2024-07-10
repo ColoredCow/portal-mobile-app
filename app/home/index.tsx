@@ -1,6 +1,6 @@
 // home/Home.tsx
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import { styles } from './styles';
 
 interface HomeProps {

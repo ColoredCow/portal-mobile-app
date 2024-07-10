@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { styles } from './styles';
 
 interface LoginProps {
   setLoggedIn: (loggedIn: boolean) => void;
+}
+
+interface User {
+  email: string;
+  password: string;
 }
 
 const Login: React.FC<LoginProps> = ({ setLoggedIn }) => {
@@ -40,8 +45,8 @@ const Login: React.FC<LoginProps> = ({ setLoggedIn }) => {
   const handleLogin = async () => {
     try {
       const users = await AsyncStorage.getItem('users');
-      const usersArray = users ? JSON.parse(users) : [];
-      const user = usersArray.find((user: any) => user.email === email && user.password === password);
+      const usersArray: User[] = users ? JSON.parse(users) : [];
+      const user: User | undefined = usersArray.find(u => u.email === email && u.password === password);
       if (user) {
         const fakeToken = '12345';
         await AsyncStorage.setItem('userToken', fakeToken);
