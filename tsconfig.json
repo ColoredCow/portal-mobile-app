@@ -1,17 +1,8 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true,
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    }
+    "jsx": "react"
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-  ]
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "exclude": ["__tests__/**/*-test.ts",],
+  "include": ["src", ".eslintrc.js", ".prettierrc.js", "App.tsx", "__tests__/App.test.tsx"],
 }
