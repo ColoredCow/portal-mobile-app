@@ -1,3 +1,3 @@
-## Congratulations! :tada:
+### Introduction
 
-We've successfully run and modified the Portal Mobile App. :partying_face:
+:wave: Welcome to the ColoredCow Portal Mobile App. A hub-and-spoke platform for organizations to effectively manage their operations and data. Uses GSuite.
